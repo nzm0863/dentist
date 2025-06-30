@@ -9,7 +9,7 @@ function Header() {
         
         {/* ナビゲーション */}
         <nav className="nav">
-          <Link to="/" className="nav-link">
+          <Link to="/sigotoru1" className="nav-link">
             ホーム
           </Link>
           <Link to="/about" className="nav-link">
