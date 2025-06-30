@@ -6,6 +6,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Product from './components/Product';
 import ReservationCalendar from './components/ReservationCalendar';
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/product/:id" element={<Product />} />
         </Routes>
         <ReservationCalendar />
+        <Footer />
       </div>
     </Router>
   );
