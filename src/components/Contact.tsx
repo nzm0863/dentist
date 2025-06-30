@@ -85,6 +85,18 @@ function Contact() {
           <p><strong>最寄り駅:</strong> 渋谷駅から徒歩5分</p>
           <p><strong>駐車場:</strong> 医院前に2台分の駐車場があります</p>
         </div>
+        <div style={{ marginTop: 16 }}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.669726232799!2d139.6983823152582!3d35.6591089801997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cae4c6b6e1b%3A0x7d6c6b6e1b6e1b6e!2z5p2x5Lqs6YO95paw5a6_5Yy65L2P5LqV!5e0!3m2!1sja!2sjp!4v1680000000000!5m2!1sja!2sjp"
+            width="100%"
+            height="300"
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Google Map"
+          ></iframe>
+        </div>
       </div>
     </div>
   );
