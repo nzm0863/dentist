@@ -5,11 +5,11 @@ function Header() {
   return (
     <header className="header">
       <div className="header-content">
-        <h1><a href="/">さわやか歯科クリニック</a></h1>
+        <h1><a href="/sigotoru1">さわやか歯科クリニック</a></h1>
         
         {/* ナビゲーション */}
         <nav className="nav">
-          <Link to="/sigotoru1" className="nav-link">
+          <Link to="/" className="nav-link">
             ホーム
           </Link>
           <Link to="/about" className="nav-link">
