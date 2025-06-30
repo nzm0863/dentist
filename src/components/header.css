@@ -1,0 +1,76 @@
+/* Headerコンポーネントのスタイル */
+.header {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.header h1 {
+  color: #333;
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.header h1 a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* ナビゲーション */
+.header .nav {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.header .nav-link {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  background: none;
+}
+
+.header .nav-link:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .header .nav {
+    gap: 10px;
+  }
+  
+  .header .nav-link {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}

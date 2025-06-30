@@ -1,0 +1,277 @@
+@charset "utf-8";
+
+body {
+  font-size: 20px;
+  background: #eaf6fb;
+  color: #222;
+  font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+}
+
+.reservation-headline {
+  text-align: center;
+  font-size: 36px;
+  margin: 24px 0 16px 0;
+  color: #1a8c7a;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 8px #b2f0e6;
+}
+
+.table {
+  width: 90%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0 auto 30px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(26, 140, 122, 0.08);
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  text-align: center;
+  border: 1px solid #b2f0e6;
+  padding: 12px 4px;
+  color: #1a8c7a;
+  background: #f7fcfd;
+  font-size: 16px;
+}
+
+.table th {
+  background: #b2f0e6;
+  color: #1a8c7a;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.table td {
+  background: #f7fcfd;
+  border-radius: 12px;
+}
+
+.selected-row {
+  background: #a2e6d4 !important;
+}
+
+.past {
+  background: #f0f0f0 !important;
+  color: #bbb !important;
+}
+
+.reservation-form {
+  width: 90%;
+  margin: 30px auto;
+  padding: 24px 0;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(26, 140, 122, 0.08);
+  color: #1a8c7a;
+}
+
+.reservation-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1a8c7a;
+  text-shadow: 0 2px 8px #b2f0e6;
+}
+
+.reservation-p {
+  text-align: center;
+  font-size: 18px;
+  color: #f9f9f9;
+}
+
+
+.form-group {
+  margin: 0 auto;
+  width: 60%;
+  text-align: center;
+}
+
+.form-group input,
+.form-group select {
+  width: 60%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1.5px solid #b2f0e6;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #f7fcfd;
+  color: #1a8c7a;
+}
+
+.form-group input[type="submit"] {
+  background-color: #1a8c7a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 20px;
+  margin-top: 18px;
+  box-shadow: 0 2px 8px rgba(26, 140, 122, 0.08);
+}
+
+.form-group input[type="submit"]:hover {
+  background-color: #00796b;
+}
+
+.please-input {
+  display: block;
+  color: #ff6666;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+
+/* list.php */
+.list-table {
+  width: 40%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.list-table th,
+.list-table td {
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.id {
+  width: 50px;
+}
+
+.add-reservation {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.add-reservation a {
+  text-decoration: none;
+  color: #31766f;
+  font-weight: bold;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .table,
+  .list-table,
+  .reservation-form,
+  .add-reservation {
+    width: 98%;
+  }
+
+  .table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .table th,
+  .table td {
+    min-width: 80px;
+    font-size: 12px;
+  }
+
+  .form-group {
+    width: 98%;
+    text-align: center;
+  }
+
+  .form-group input {
+    width: 90%;
+  }
+
+  .reservation-headline,
+  .reservation-p {
+    font-size: 20px;
+  }
+
+
+}
+
+/* 予約ボタンの基本デザイン */
+.select-btn {
+  display: inline-block;
+  width: 100px;
+  padding: 8px 0;
+  margin: 6px 0;
+  font-size: 16px;
+  border-radius: 20px;
+  border: 2px solid #1a8c7a;
+  background: #fff;
+  color: #1a8c7a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  box-shadow: 0 2px 8px rgba(26, 140, 122, 0.08);
+}
+
+/* 空きボタンのホバー */
+.select-btn:hover {
+  background: #e0f7f4;
+  color: #00796b;
+  border-color: #00796b;
+}
+
+/* 選択中ボタン */
+.select-btn.selected {
+  background: #1a8c7a !important;
+  color: #fff !important;
+  border-color: #1a8c7a !important;
+}
+
+.select-btn.selected span {
+  color: #fff !important;
+}
+
+/* 予約済み・過去ボタン */
+.select-btn[disabled] {
+  background: #f0f0f0 !important;
+  color: #bbb !important;
+  border-color: #ccc !important;
+  cursor: not-allowed;
+}
+
+.time-slot-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin: 16px 0;
+}
+
+.time-label {
+  font-size: 18px;
+  color: #1a8c7a;
+  margin-right: 8px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #1a8c7a;
+  gap: 4px;
+}
+
+.time-slot-group input[type="radio"] {
+  margin-right: 4px;
+}
