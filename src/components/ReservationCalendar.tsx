@@ -94,55 +94,57 @@ const ReservationCalendar: React.FC = () => {
         <div style={{ fontWeight: 'bold', color: '#1a8c7a', marginBottom: 10 }}>
           選択中：{selectedDate ? `${selectedDate} ${selectedSlot}` : '未選択'}
         </div>
-        <table className="reservation-calendar-table">
-          <thead>
-            <tr>
-              {weekdays.map(w => (
-                <th key={w}>{w}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {(() => {
-              const rows = [];
-              for (let i = 0; i < calendarDates.length; i += 7) {
-                rows.push(
-                  <tr key={i}>
-                    {calendarDates.slice(i, i + 7).map((date) => {
-                      const isPast = date < todayStr;
-                      return (
-                        <td key={date} className={selectedDate === date ? 'selected-cell' : ''}>
-                          {['午前', '午後'].map(slot => {
-                            const isReserved = reservedMap[date]?.[slot as TimeSlot];
-                            const isSelected = selectedDate === date && selectedSlot === slot;
-                            return (
-                              <div key={slot} style={{ marginBottom: 6 }}>
-                                <div style={{ fontSize: 14 }}>{date} ({slot})</div>
-                                {isReserved ? (
-                                  <span style={{ color: 'red' }}>×（予約あり）</span>
-                                ) : (
-                                  <button
-                                    type="button"
-                                    className={`reservation-btn${isSelected ? ' selected' : ''}`}
-                                    disabled={isPast}
-                                    onClick={() => handleSelect(date, slot as TimeSlot)}
-                                  >
-                                    {isSelected ? '選択中' : '〇（空き）'}
-                                  </button>
-                                )}
-                              </div>
-                            );
-                          })}
-                        </td>
-                      );
-                    })}
-                  </tr>
-                );
-              }
-              return rows;
-            })()}
-          </tbody>
-        </table>
+        <div className="reservation-calendar-scroll">
+          <table className="reservation-calendar-table">
+            <thead>
+              <tr>
+                {weekdays.map(w => (
+                  <th key={w}>{w}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {(() => {
+                const rows = [];
+                for (let i = 0; i < calendarDates.length; i += 7) {
+                  rows.push(
+                    <tr key={i}>
+                      {calendarDates.slice(i, i + 7).map((date) => {
+                        const isPast = date < todayStr;
+                        return (
+                          <td key={date} className={selectedDate === date ? 'selected-cell' : ''}>
+                            {['午前', '午後'].map(slot => {
+                              const isReserved = reservedMap[date]?.[slot as TimeSlot];
+                              const isSelected = selectedDate === date && selectedSlot === slot;
+                              return (
+                                <div key={slot} style={{ marginBottom: 6 }}>
+                                  <div style={{ fontSize: 14 }}>{date} ({slot})</div>
+                                  {isReserved ? (
+                                    <span style={{ color: 'red' }}>×（予約あり）</span>
+                                  ) : (
+                                    <button
+                                      type="button"
+                                      className={`reservation-btn${isSelected ? ' selected' : ''}`}
+                                      disabled={isPast}
+                                      onClick={() => handleSelect(date, slot as TimeSlot)}
+                                    >
+                                      {isSelected ? '選択中' : '〇（空き）'}
+                                    </button>
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  );
+                }
+                return rows;
+              })()}
+            </tbody>
+          </table>
+        </div>
         <form onSubmit={handleSubmit} className="reservation-form-container">
           <h2>予約</h2>
           <div style={{ marginBottom: 16 }}>

@@ -500,7 +500,7 @@ body {
 
 /* === ReservationCalendar用スタイル追加 === */
 .reservation-calendar-container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 32px auto;
   padding: 24px;
   background: #f0fafd;
@@ -625,6 +625,11 @@ body {
   color: #1a8c7a;
   margin-top: 12px;
   text-align: center;
+}
+
+.reservation-calendar-scroll {
+  overflow-x: auto;
+  width: 100%;
 }
 
 
