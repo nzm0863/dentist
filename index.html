@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nakamura</title>
+    <meta
+      name="description"
+      content="Nakamuraのポートフォリオ。Web制作やデザインの実績、スキルセット、プロフィールをまとめています。"
+    />
+    <link rel="icon" href="img/favicon.ico" id="favicon" />
+    <link rel="stylesheet" href="assets/sanitize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Serif+JP:wght@200..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/messages_ja.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#contact_form").validate({
+          errorPlacement: function (error, element) {
+            // thの直後にエラーを表示
+            if (window.matchMedia("(max-width: 768px)").matches) {
+              // レスポンシブ時（スマホ表示時）はthの直後にエラー
+              var th = element.closest("td").prev("th");
+              if (th.length) {
+                error.insertAfter(th);
+              } else {
+                error.insertAfter(element);
+              }
+            } else {
+              // PC時は通常通り（例：inputの直後など）
+              if (element.is(':radio')) {
+            error.insertAfter(element.closest('.radio-group'));
+          } else {
+            error.insertAfter(element);
+          }
+            }
+          },
+        });
+      });
+    </script>
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="particles-js"></div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="assets/particles.js"></script>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
